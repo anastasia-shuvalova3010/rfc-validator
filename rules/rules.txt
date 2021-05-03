@@ -1,0 +1,7 @@
+MinorRFC(?rfc)->has_lead_time_threshold(?rfc,3)
+SignificantRFC(?rfc)->has_lead_time_threshold(?rfc,10)
+MajorRFC(?rfc)->has_lead_time_threshold(?rfc,14)
+RFC(?rfc), has_category(?rfc, ?c), Documentation(?c) -> NoBackoutRequiredRFC(?rfc)
+RFC(?rfc), has_category(?rfc, ?c), Tracing_ticket(?c) -> NoBackoutRequiredRFC(?rfc)
+RFC(?rfc), impacts_ITS(?rfc) -> impacts_Data_Center(?rfc)
+ApprovedRFC(?rfc), has_pir_assigned(?rfc, "False") -> has_notification(?rfc, "For Approved RFC PIR task must be assigned")
