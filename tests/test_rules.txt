@@ -1,0 +1,3 @@
+MinorRFC(?rfc)->has_lead_time_threshold(?rfc,3)
+RFC(?rfc), has_type(?t, "Minor") ->  MinorRFC(?rfc)
+RFC(?rfc), has_lead_time_threshold(?rfc,?t), lead_time(?rfc, ?ltime), lessThan(?ltime, ?t) -> has_notification(?rfc, "Incorrect lead time for a given RFC Type")
