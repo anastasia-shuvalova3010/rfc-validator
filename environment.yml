@@ -1,0 +1,8 @@
+name: rfc-rules
+
+dependencies:
+  - validator=3.7
+  - owlready2
+  - json
+  - rdflib
+  - datetime

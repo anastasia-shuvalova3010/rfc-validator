@@ -1,2 +1,1 @@
-# RFC validator
-This repository contains the source code for the tool proposed for semantic validation of RFCs
+# RfC Rules via Semantic Technologies
