@@ -1,0 +1,1835 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://rfc-ontology#"
+     xml:base="http://rfc-ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rfc="http://rfc_ontology#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://rfc-ontology#">
+        <owl:versionIRI rdf:resource="http://rfc-ontology#"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rfc_ontology#rfc:Service -->
+
+    <rdfs:Datatype rdf:about="http://rfc_ontology#rfc:Service"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rfc-ontology#assigned_to_GCM -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#assigned_to_GCM">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines if the RFC is assigned to Global Change Management</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_assigned_group -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_assigned_group">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines assigned group for the RFC</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_category -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_category">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc-ontology#CI"/>
+        <rdfs:domain rdf:resource="http://rfc-ontology#Service"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines a category of a subject</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_ci -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_ci">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines a Control item affected by a change</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_impacted_service -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_impacted_service">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines a service affected by a change</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_name -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc-ontology#CI"/>
+        <rdfs:domain rdf:resource="http://rfc-ontology#Service"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines a name of a subject</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_notification -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_notification">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines the text of the notification raised for an RFC</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_outage_end_date -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_outage_end_date">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines outage end date for a change</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_outage_start_date -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_outage_start_date">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines an outage start date for a change</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_pir_assigned -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_pir_assigned">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines if a change has PIR task assigned</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_potentially_impacted_service -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_potentially_impacted_service">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines the potentially impacted service for a change</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_tag -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_tag">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines a tag attached to an RFC</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_test_task -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_test_task">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines the test task assigned to an RFC</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#has_warning -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#has_warning">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines the text of the warning attached to an RFC</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#impacts_Data_Center -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#impacts_Data_Center">
+        <owl:equivalentProperty rdf:resource="http://rfc-ontology#impacts_ITS"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">Defines if the change has impact on a company&apos;s Data Center</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#impacts_ITS -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#impacts_ITS">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">Defines if a change impacts ITS Business Unit</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#managed_by -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#managed_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc-ontology#CI"/>
+        <rdfs:domain rdf:resource="http://rfc-ontology#Service"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines a group manages the subject</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc-ontology#related_service -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc-ontology#related_service">
+        <rdfs:domain rdf:resource="http://rfc-ontology#CI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines a service related to a Control Item</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc_ontology#backout_planned -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc_ontology#backout_planned">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">Defines if a backout planned for the RFC</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc_ontology#has_end_date -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc_ontology#has_end_date">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Defines RFC planned end date</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc_ontology#has_impacted_bu -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc_ontology#has_impacted_bu">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines a usiness Unit affected by a change</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc_ontology#has_impacted_country -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc_ontology#has_impacted_country">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines a country affected by a change</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc_ontology#has_lead_time_threshold -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc_ontology#has_lead_time_threshold">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Defines lead time threshold for a given RFC type</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc_ontology#has_number -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc_ontology#has_number">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines a number of an RFC</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc_ontology#has_region -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc_ontology#has_region">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#Impacted_Country"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines a region for a country impacted by a change</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc_ontology#has_start_date -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc_ontology#has_start_date">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Defines a planned start date for a change</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc_ontology#has_state -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc_ontology#has_state">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines an RFC state</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc_ontology#has_type -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc_ontology#has_type">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines the type of an RFC</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc_ontology#lead_time -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc_ontology#lead_time">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Defines a period between RFC end and start date</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rfc_ontology#requires_outage_of -->
+
+    <owl:DatatypeProperty rdf:about="http://rfc_ontology#requires_outage_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://rfc_ontology#RFC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Defines a service that requires outage during RFC backout</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rfc-ontology#Advanced -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Advanced">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Tracing_ticket"/>
+        <owl:disjointWith rdf:resource="http://rfc-ontology#Basic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Basic -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Basic">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Tracing_ticket"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Bugfix -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Bugfix">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Software"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Build -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Build">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Hardware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#CI -->
+
+    <owl:Class rdf:about="http://rfc-ontology#CI">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">The class defines Control Item</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Commissioning -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Commissioning">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Hardware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Configuration -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Configuration">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Software"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#CorrectRFC -->
+
+    <owl:Class rdf:about="http://rfc-ontology#CorrectRFC">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#RFC"/>
+        <owl:disjointWith rdf:resource="http://rfc-ontology#IncorrectRFC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Customer_Integration -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Customer_Integration">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Release"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Decommissioning -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Decommissioning">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Hardware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Deployment -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Deployment">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Release"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Documentation -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Documentation">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Facility -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Facility">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Further_System_Development -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Further_System_Development">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Release"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Global_Change_Management -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Global_Change_Management">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Hardware -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Hardware">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Impacted_CI -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Impacted_CI">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#CI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Impacted_Service -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Impacted_Service">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#IncorrectRFC -->
+
+    <owl:Class rdf:about="http://rfc-ontology#IncorrectRFC">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#RFC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Infrastructure -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Infrastructure">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Infrastructure_sub -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Infrastructure_sub">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Network_DC -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Network_DC">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#New -->
+
+    <owl:Class rdf:about="http://rfc-ontology#New">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Documentation"/>
+        <owl:disjointWith rdf:resource="http://rfc-ontology#Update"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#New_Service_Development -->
+
+    <owl:Class rdf:about="http://rfc-ontology#New_Service_Development">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Release"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#NoBackoutRequiredRFC -->
+
+    <owl:Class rdf:about="http://rfc-ontology#NoBackoutRequiredRFC">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#RFC"/>
+        <owl:disjointWith rdf:resource="http://rfc_ontology#BackoutRequiredRFC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#PIR -->
+
+    <owl:Class rdf:about="http://rfc-ontology#PIR">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#TestTask"/>
+        <rdfs:comment xml:lang="en">The task defines one of test task entities, Post Implementation Review.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Patching -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Patching">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Rebuild -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Rebuild">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Hardware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Release -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Release">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Service -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Service">
+        <rdfs:comment xml:lang="en">The class defines IT Service potentially impacted by a change.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Service_Sunset -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Service_Sunset">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Release"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Software -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Software">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Telecom_Vendors -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Telecom_Vendors">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Tracing_ticket -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Tracing_ticket">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Update -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Update">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Documentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Upgrade -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Upgrade">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Hardware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc-ontology#Install/Uninstall -->
+
+    <owl:Class rdf:about="http://rfc-ontology#Install/Uninstall">
+        <rdfs:subClassOf rdf:resource="http://rfc-ontology#Software"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#ApprovedRFC -->
+
+    <owl:Class rdf:about="http://rfc_ontology#ApprovedRFC">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#RFC"/>
+        <owl:disjointWith rdf:resource="http://rfc_ontology#RejectedRFC"/>
+        <owl:disjointWith rdf:resource="http://rfc_ontology#SuspendedRFC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#BackoutRequiredRFC -->
+
+    <owl:Class rdf:about="http://rfc_ontology#BackoutRequiredRFC">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#RFC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#BuildTask -->
+
+    <owl:Class rdf:about="http://rfc_ontology#BuildTask">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#Business_Unit -->
+
+    <owl:Class rdf:about="http://rfc_ontology#Business_Unit">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">The class describes the Business Unit entity</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#Category -->
+
+    <owl:Class rdf:about="http://rfc_ontology#Category">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">This class describes the RFC Category</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#ClosedRFC -->
+
+    <owl:Class rdf:about="http://rfc_ontology#ClosedRFC">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#RFC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#Country -->
+
+    <owl:Class rdf:about="http://rfc_ontology#Country">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">The class defines Country. Applicable to normal countries as well as to Data Centers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#DGF -->
+
+    <owl:Class rdf:about="http://rfc_ontology#DGF">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Business_Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#DSC -->
+
+    <owl:Class rdf:about="http://rfc_ontology#DSC">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Business_Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#Data_Center -->
+
+    <owl:Class rdf:about="http://rfc_ontology#Data_Center">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#ECom -->
+
+    <owl:Class rdf:about="http://rfc_ontology#ECom">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Business_Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#Express -->
+
+    <owl:Class rdf:about="http://rfc_ontology#Express">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Business_Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#Group -->
+
+    <owl:Class rdf:about="http://rfc_ontology#Group">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">The class defines the term Group, meaning working group within the company.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#ITS -->
+
+    <owl:Class rdf:about="http://rfc_ontology#ITS">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Business_Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#Impacted_BU -->
+
+    <owl:Class rdf:about="http://rfc_ontology#Impacted_BU">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Business_Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#Impacted_Country -->
+
+    <owl:Class rdf:about="http://rfc_ontology#Impacted_Country">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#MajorRFC -->
+
+    <owl:Class rdf:about="http://rfc_ontology#MajorRFC">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#RFC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#MinorRFC -->
+
+    <owl:Class rdf:about="http://rfc_ontology#MinorRFC">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#RFC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#Normal_Country -->
+
+    <owl:Class rdf:about="http://rfc_ontology#Normal_Country">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#RFC -->
+
+    <owl:Class rdf:about="http://rfc_ontology#RFC">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">The central entity, defining Request for Change</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#RejectedRFC -->
+
+    <owl:Class rdf:about="http://rfc_ontology#RejectedRFC">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#RFC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#SignificantRFC -->
+
+    <owl:Class rdf:about="http://rfc_ontology#SignificantRFC">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#RFC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#SuspendedRFC -->
+
+    <owl:Class rdf:about="http://rfc_ontology#SuspendedRFC">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#RFC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#Task -->
+
+    <owl:Class rdf:about="http://rfc_ontology#Task">
+        <rdfs:comment xml:lang="en">The class defines tasks assigned to an RFC</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://rfc_ontology#TestTask -->
+
+    <owl:Class rdf:about="http://rfc_ontology#TestTask">
+        <rdfs:subClassOf rdf:resource="http://rfc_ontology#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rfc_ontology#Advanced -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Advanced"/>
+    
+
+
+    <!-- http://rfc_ontology#Basic -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Basic"/>
+    
+
+
+    <!-- http://rfc_ontology#Bugfix -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Bugfix"/>
+    
+
+
+    <!-- http://rfc_ontology#Build -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Build"/>
+    
+
+
+    <!-- http://rfc_ontology#Commissioning -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Commissioning"/>
+    
+
+
+    <!-- http://rfc_ontology#Configuration -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Configuration"/>
+    
+
+
+    <!-- http://rfc_ontology#Customer_Integration -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Customer_Integration"/>
+    
+
+
+    <!-- http://rfc_ontology#Decomissioning -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Decomissioning"/>
+    
+
+
+    <!-- http://rfc_ontology#Deployment -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Deployment"/>
+    
+
+
+    <!-- http://rfc_ontology#Documentation -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Documentation"/>
+    
+
+
+    <!-- http://rfc_ontology#Facility -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Facility"/>
+    
+
+
+    <!-- http://rfc_ontology#Further_System_Development -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Further_System_Development"/>
+    
+
+
+    <!-- http://rfc_ontology#GLOBAL_CHANGE_MANAGEMENT -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#GLOBAL_CHANGE_MANAGEMENT">
+        <rdf:type rdf:resource="http://rfc_ontology#Group"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://rfc_ontology#Hardware -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Hardware"/>
+    
+
+
+    <!-- http://rfc_ontology#Infrastructure -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Infrastructure"/>
+    
+
+
+    <!-- http://rfc_ontology#Infrastructure_sub -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Infrastructure_sub"/>
+    
+
+
+    <!-- http://rfc_ontology#Network_DC -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Network_DC"/>
+    
+
+
+    <!-- http://rfc_ontology#New -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#New"/>
+    
+
+
+    <!-- http://rfc_ontology#New_Service_Development -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#New_Service_Development"/>
+    
+
+
+    <!-- http://rfc_ontology#Patching -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Patching"/>
+    
+
+
+    <!-- http://rfc_ontology#Rebuild -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Rebuild"/>
+    
+
+
+    <!-- http://rfc_ontology#Release -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Release"/>
+    
+
+
+    <!-- http://rfc_ontology#Service_Sunset -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Service_Sunset"/>
+    
+
+
+    <!-- http://rfc_ontology#Software -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Software"/>
+    
+
+
+    <!-- http://rfc_ontology#Telecom_Vendors -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Telecom_Vendors"/>
+    
+
+
+    <!-- http://rfc_ontology#Tracing_ticket -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Tracing_ticket"/>
+    
+
+
+    <!-- http://rfc_ontology#Update -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Update"/>
+    
+
+
+    <!-- http://rfc_ontology#Upgrade -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Upgrade"/>
+    
+
+
+    <!-- http://rfc_ontology#Install/Uninstall -->
+
+    <owl:NamedIndividual rdf:about="http://rfc_ontology#Install/Uninstall"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://rfc-ontology#Bugfix"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Configuration"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Install/Uninstall"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://rfc-ontology#Build"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Commissioning"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Decommissioning"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Rebuild"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Upgrade"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://rfc-ontology#Customer_Integration"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Deployment"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Further_System_Development"/>
+            <rdf:Description rdf:about="http://rfc-ontology#New_Service_Development"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Service_Sunset"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://rfc-ontology#Documentation"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Hardware"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Infrastructure"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Release"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Software"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Tracing_ticket"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://rfc-ontology#Facility"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Infrastructure_sub"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Network_DC"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Patching"/>
+            <rdf:Description rdf:about="http://rfc-ontology#Telecom_Vendors"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="file://onto/rfc_ontology.owl#rfc">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="file://onto/rfc_ontology.owl#c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://rfc-ontologyrfc">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://rfc-ontologypir">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="file://onto/rfc_ontology.owl#t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="file://onto/rfc_ontology.owl#ltime">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://rfc-ontologyn">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Minor RFC</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#RFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://rfc_ontology#has_type"/>
+                                <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#t"/>
+                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Minor</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#MinorRFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Significant RFC</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#RFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://rfc_ontology#has_type"/>
+                                <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#t"/>
+                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Significant</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#SignificantRFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incorrect RFC</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#RFC"/>
+                        <swrl:argument1 rdf:resource="http://rfc-ontologyrfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://rfc-ontology#has_notification"/>
+                                <swrl:argument1 rdf:resource="http://rfc-ontologyrfc"/>
+                                <swrl:argument2 rdf:resource="http://rfc-ontologyn"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc-ontology#IncorrectRFC"/>
+                        <swrl:argument1 rdf:resource="http://rfc-ontologyrfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LT threshold Significant</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#SignificantRFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://rfc_ontology#has_lead_time_threshold"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Suspended RFC</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#SuspendedRFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://rfc_ontology#has_state"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Suspended</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S14</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#RFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://rfc-ontology#has_category"/>
+                                <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                                <swrl:argument2 rdf:resource="file://onto/rfc_ontology.owl#c"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://rfc-ontology#Documentation"/>
+                                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#c"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc-ontology#NoBackoutRequiredRFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S15</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#RFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://rfc-ontology#has_category"/>
+                                <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                                <swrl:argument2 rdf:resource="file://onto/rfc_ontology.owl#c"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://rfc-ontology#Tracing_ticket"/>
+                                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#c"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc-ontology#NoBackoutRequiredRFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Approved RFC</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#ApprovedRFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://rfc_ontology#has_state"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Approved</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PIR assignment</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#ApprovedRFC"/>
+                        <swrl:argument1 rdf:resource="http://rfc-ontologyrfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://rfc-ontology#has_pir_assigned"/>
+                                <swrl:argument1 rdf:resource="http://rfc-ontologyrfc"/>
+                                <swrl:argument2 rdf:resource="http://rfc-ontologypir"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#booleanNot"/>
+                                        <swrl:arguments rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://rfc-ontologyrfc"/>
+                                            <rdf:Description rdf:about="http://rfc-ontologypir"/>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://rfc-ontology#has_notification"/>
+                        <swrl:argument1 rdf:resource="http://rfc-ontologyrfc"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For Approved RFC PIR task must be assigned</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LT threshold Major</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#MajorRFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://rfc_ontology#has_lead_time_threshold"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LT threshold Minor</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#MinorRFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://rfc_ontology#has_lead_time_threshold"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Empty Backout plan</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#RFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://rfc_ontology#backout_planned"/>
+                                <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://rfc-ontology#has_notification"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Backout plan needs to be filled!</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incorrect LT notification</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#RFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://rfc_ontology#has_lead_time_threshold"/>
+                                <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                                <swrl:argument2 rdf:resource="file://onto/rfc_ontology.owl#t"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://rfc_ontology#lead_time"/>
+                                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                                        <swrl:argument2 rdf:resource="file://onto/rfc_ontology.owl#ltime"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                                <swrl:arguments rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="file://onto/rfc_ontology.owl#ltime"/>
+                                                    <rdf:Description rdf:about="file://onto/rfc_ontology.owl#t"/>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://rfc-ontology#has_notification"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incorrect lead time for a given RFC Type</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Major RFC</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#RFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://rfc_ontology#has_type"/>
+                                <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#t"/>
+                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Major</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://rfc_ontology#MajorRFC"/>
+                        <swrl:argument1 rdf:resource="file://onto/rfc_ontology.owl#rfc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
